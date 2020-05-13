@@ -3,8 +3,7 @@ package com.example.testbarang;
 import java.io.Serializable;
 
 public class Barang {
-    private String kode;
-    private String nama;
+    private String kode, nama;
 
     public Barang(){}
 
