@@ -63,4 +63,9 @@ public class TambahData extends AppCompatActivity {
             }
         });
     }
+
+    public static Intent getActIntent(Activity activity){
+        //kode untuk pengambilan intent
+        return new Intent(activity, TambahData.class);
+    }
 }
