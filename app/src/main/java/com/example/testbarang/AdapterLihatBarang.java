@@ -39,8 +39,15 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        /*Inisiasi View
+        * Disini kita hanya menggunakan data string untuk tiap item
+        * dan juga viewnya hanyalah satu TextView*/
+        TextView tvTitle;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvTitle = itemView.findViewById(R.id.tv_namabarang);
         }
     }
 }
