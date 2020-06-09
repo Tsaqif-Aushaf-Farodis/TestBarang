@@ -17,7 +17,7 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
     private Context context;
 
     public AdapterLihatBarang(ArrayList<Barang> barangs, Context c){
-        //Inisiasi data dan variabel yang akan digunakan
+        //Inisialisasi data dan variabel yang akan digunakan
         daftarBarang = barangs;
         context = c;
     }
@@ -25,7 +25,7 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
     @NonNull
     @Override
     public AdapterLihatBarang.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //Inisiasi ViewHolder
+        //Inisialisasi ViewHolder
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_barang, parent, false);
         // Mengeset ukuran view, margin, padding dan parameter layout lainnya
         ViewHolder viewHolder = new ViewHolder(view);
@@ -59,7 +59,7 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        /*Inisiasi View
+        /*Inisialisasi View
         * Disini kita hanya menggunakan data string untuk tiap item
         * dan juga viewnya hanyalah satu TextView*/
         TextView tvTitle;
