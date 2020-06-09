@@ -25,7 +25,11 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
     @NonNull
     @Override
     public AdapterLihatBarang.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        //Inisiasi ViewHolder
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_barang, parent, false);
+        // Mengeset ukuran view, margin, padding dan parameter layout lainnya
+        ViewHolder viewHolder = new ViewHolder(view);
+        return viewHolder;
     }
 
     @Override
@@ -39,7 +43,6 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         /*Inisiasi View
         * Disini kita hanya menggunakan data string untuk tiap item
         * dan juga viewnya hanyalah satu TextView*/
