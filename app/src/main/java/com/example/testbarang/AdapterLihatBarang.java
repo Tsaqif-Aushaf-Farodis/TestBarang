@@ -54,7 +54,8 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
 
     @Override
     public int getItemCount() {
-        return 0;
+        //Mengembalikan jumlah item pada barang
+        return daftarBarang.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
