@@ -12,6 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.ViewHolder> {
+
+    private ArrayList<Barang> daftarBarang;
+    private Context context;
+
+    public AdapterLihatBarang(ArrayList<Barang> barangs, Context c){
+        //Inisiasi data dan variabel yang akan digunakan
+        daftarBarang = barangs;
+        context = c;
+    }
+
     @NonNull
     @Override
     public AdapterLihatBarang.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
