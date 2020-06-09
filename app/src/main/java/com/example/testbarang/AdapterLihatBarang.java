@@ -34,7 +34,22 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
 
     @Override
     public void onBindViewHolder(@NonNull AdapterLihatBarang.ViewHolder holder, int position) {
-
+        //Menampilkan data pada view
+        final String name = daftarBarang.get(position).getNama();
+        holder.tvTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Untuk latihan selanjutnya, jika ingin membaca detail data
+            }
+        });
+        holder.tvTitle.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                //Untuk latihan selanjutnya, fungsi delete dan update data
+                return true;
+            }
+        });
+        holder.tvTitle.setText(name);
     }
 
     @Override
