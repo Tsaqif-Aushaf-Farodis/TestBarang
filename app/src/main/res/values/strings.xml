@@ -9,4 +9,6 @@
     <string name="judul2">Penambahan Data</string>
     <string name="judul3">Data Barang</string>
     <string name="kosong"></string>
+    <string name="btn_update">Update</string>
+    <string name="btn_delete">Delete</string>
 </resources>
