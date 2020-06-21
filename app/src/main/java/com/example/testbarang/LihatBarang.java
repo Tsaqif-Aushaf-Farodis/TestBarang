@@ -1,6 +1,7 @@
 package com.example.testbarang;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,7 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,8 +24,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class LihatBarang extends AppCompatActivity {
+public class LihatBarang extends AppCompatActivity implements AdapterLihatBarang.FirebaseDataListener{
     //Mendefinisikan variabel yang akan dipakai
     private DatabaseReference database;
     private RecyclerView recyclerView;
@@ -71,5 +80,27 @@ public class LihatBarang extends AppCompatActivity {
     }
     public static Intent getActIntent(Activity activity){
         return new Intent(activity, LihatBarang.class);
+    }
+
+    @Override
+    public void onDeleteData(Barang barang, int position) {
+        /**
+         * Kode ini akan dipanggil ketika method onDeleteData
+         * dipanggil dari adapter lewat interface.
+         * Yang kemudian akan mendelete data di Firebase Realtime DB
+         * berdasarkan key barang.
+         * Jika sukses akan memunculkan Toast
+         */
+        if(database!=null){
+            database.child("Barang")
+                    .child(barang.getKode())
+                    .removeValue()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(LihatBarang.this,"Data berhasil di hapus", Toast.LENGTH_LONG).show();
+            }
+        });
+        }
     }
 }
